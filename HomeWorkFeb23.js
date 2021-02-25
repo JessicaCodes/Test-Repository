@@ -51,3 +51,5 @@ console.log('I am ' + size + ", " + smarts + ", " + color + ' and ' + status +
     console.log(list[2])
     console.log(list[3])
 
+    
+

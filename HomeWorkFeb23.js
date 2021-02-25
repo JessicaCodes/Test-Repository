@@ -1,4 +1,4 @@
-let myName = "Jessica AKA Jess", myAge = "38", areYouLying = "False",
+let myName = "Jessica AKA Jess", myAge = "38", areYouLying = false,
         carName = "Volvo", num = 50, num1 = 1, num2 = 5, num3 = 15, num4 = 10,
          symbol1 = "+", symbol2 = "=", sum = num2 + num4;
 
@@ -25,7 +25,7 @@ console.log(num1,num2)
 
 console.log(num4,symbol1,num2,symbol2,num3)
 
-console.log('The sum of' +  num4  + 'and' +  num2  + 'is:' +  sum)
+console.log('The sum of '+  num4  + ' and ' +  num2  + ' is: ' +  sum)
 
 // 7. Create a variable called num3, assign the addition of num1 and num2 to it.
 
@@ -36,7 +36,18 @@ console.log(num3)
 let size = "large" , smarts = "intelligent" , color = "gray" , status = "endangered",
         animal = "elephant"
 
-console.log('I am' + size + smarts + color + 'and' + status + 
-    '. What am I? I am an' + animal)       
+console.log('I am ' + size + ", " + smarts + ", " + color + ' and ' + status + 
+    '. What am I? I am an ' + animal +"!")       
 
+
+    let list = "list"
+
+
+   //console.log(list[0],[1])    
+
+
+    console.log(list[0])
+    console.log(list[1])
+    console.log(list[2])
+    console.log(list[3])
 

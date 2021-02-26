@@ -76,4 +76,4 @@ let myFaveIceCream = "Chocolate";
 
 //Log the string, 'My favorite ice cream flavor is (your favorite ice cream flavor)'*/
  
-console.log("My favorite icecream is"+ " " + myFaveIceCream);
+console.log("My favorite icecream is "+ " " + myFaveIceCream);

@@ -2,7 +2,7 @@
 
 //1. Temperature Converter Lab
 
-let fahr = (45);
+let fahr = (78);
 let fahrToCelc = (fahr - 32) / 1.8;
 let fahrToKelv = (fahr + 459.67) / 1.8;
 console.log(fahr + "° Fahrenheit converts to " + Math.round(fahrToCelc) + "° Celcius and " + Math.round(fahrToKelv) + "° Kelvin");

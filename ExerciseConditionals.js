@@ -12,7 +12,7 @@
         - Definitely feel free to get creative.
 */
 
-let userName = "Jr"
+let userName = "Ma"
 let random1 = (Math.floor(Math.random()*5))
 console.log(random1)
 

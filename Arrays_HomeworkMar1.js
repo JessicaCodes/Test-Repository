@@ -69,11 +69,11 @@ console.log (devices)
 
 const timeForDinner = "What Time Is It"
 
-dinnerTime = timeForDinner.split(" ")
+const dinnerTime = timeForDinner.split(" ")
 
 console.log(dinnerTime)
 
-lateDinner = dinnerTime.join("-")
+const lateDinner = dinnerTime.join("-")
 
 dinnerTime.shift()
 

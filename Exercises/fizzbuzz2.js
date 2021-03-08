@@ -1,4 +1,3 @@
-
 /*Will I be able to solve FizzBuzz?
 
 // The Problem:
@@ -12,21 +11,19 @@
   // print the number to the console
 */
 
-let number = 0;
-while (number <= 100){
-    if (number % 3 === 0){
-console.log("fizz", number + 1)
-    number = number + 1
+
+
+function fizzbuzz(output){
+    for (let number = 1; number <= 100; number++){
+    if (number % 3 === 0 && number % 5 === 0){
+    console.log("FizzBuzz")
+    } else if (number % 3 === 0){
+    console.log("Fizz");
+    } else if (number % 5 === 0){
+    console.log("Buzz")
+    } else {
+    console.log(number)
     }
-    else if (number % 5 = 0){
-console.log("buzz" , number + 1)
-number = number + 1
-    }
-    else if (number % 3 || 3) && (!number / 5 || 5)
-    {
-    console.log("fizzbuzz", number + 1)
-    number = number + 1
-    }
-    console.log(number + 1 )
-number = number + 1
-}
+    } 
+    } 
+    fizzbuzz()

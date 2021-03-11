@@ -34,14 +34,14 @@
 */
 
 const demonStrikes = {
-    hammerKick: "Hammer Kick! " + (Math.floor(Math.random() * 50) + 101),
-    superPunch: "Super Punch! " + (Math.floor(Math.random() * 50) + 51),
-    lightSmack: "Light Smack! " + (Math.floor(Math.random() * 50) + 1)
+    hammerKick: ["Hammer Kick! ", (Math.floor(Math.random() * 50) + 101)],
+    superPunch: ["Super Punch! ", (Math.floor(Math.random() * 50) + 51)],
+    lightSmack: ["Light Smack! ", (Math.floor(Math.random() * 50) + 1)]
 }
 
 const demonStats = {
     points:0,
-    score:200
+    score: 200
 }
 
 const slayerStrikes = {
@@ -55,16 +55,27 @@ const slayerStats = {
     score: 200
 }
 
-
 function randomSlayerStrikes(object){
     const strikeKeys = Object.keys(object);
-    return "Slayer " + object[strikeKeys[strikeKeys.length * Math.random()<< 0]];
+    const randomStrike = Math.floor(strikeKeys.length+1 * Math.random())
+    return "Slayer " + object[strikeKeys[randomStrike]];
     }
 
- function randomDemonStrikes(object){
+function randomDemonStrikes(object){
     const strikeKeys = Object.keys(object);
     return "Demon " + object[strikeKeys[strikeKeys.length * Math.random()<< 0]] // + slayerStats.score - strikeKeys;
     }
+
+function demonUpdatedStats(demonHealth){
+    // let score = demonStats.score
+    if(demonStats.score <= 0){
+      return "Demon Loses!"
+    }   else {
+    return demonStats.score = demonStats.score - hits;
+    
+}
+} 
+ console.log(demonUpdatedStats())       
 
 // function battle(){
 //     let demonPoints = demonStats.points + demonStats.points;

@@ -8,9 +8,17 @@ let candidate = {
   }
 
 function match(candidate, job) {
+    if (candidate === null){
+        return 
+
+    }
     if (candidate >= job){
-        return true
-    } else return false
+        return false
+    } else return true
   }
 
 console.log(match(candidate, job))
+
+const match
+const error = newError("testing")
+if (candidate.minsalary && job.maxSalary)

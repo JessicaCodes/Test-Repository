@@ -34,9 +34,9 @@
 */
 
 const demonStrikes = {
-    hammerKick: ["Hammer Kick! ", (Math.floor(Math.random() * 50) + 101)],
-    superPunch: ["Super Punch! ", (Math.floor(Math.random() * 50) + 51)],
-    lightSmack: ["Light Smack! ", (Math.floor(Math.random() * 50) + 1)]
+    hammerKick: "Hammer Kick! "+ (Math.floor(Math.random() * 50) + 101),
+    superPunch: "Super Punch! "+ (Math.floor(Math.random() * 50) + 51),
+    lightSmack: "Light Smack! "+ (Math.floor(Math.random() * 50) + 1)
 }
 
 const demonStats = {
@@ -55,40 +55,16 @@ const slayerStats = {
     score: 200
 }
 
+
 function randomSlayerStrikes(object){
     const strikeKeys = Object.keys(object);
-    const randomStrike = Math.floor(strikeKeys.length+1 * Math.random())
-    return "Slayer " + object[strikeKeys[randomStrike]];
+    return "Slayer " + object[strikeKeys[strikeKeys.length * Math.random()<< 0]]
     }
 
 function randomDemonStrikes(object){
     const strikeKeys = Object.keys(object);
     return "Demon " + object[strikeKeys[strikeKeys.length * Math.random()<< 0]] // + slayerStats.score - strikeKeys;
     }
-
-function demonUpdatedStats(demonHealth){
-    // let score = demonStats.score
-    if(demonStats.score <= 0){
-      return "Demon Loses!"
-    }   else {
-    return demonStats.score = demonStats.score - hits;
-    
-}
-} 
- console.log(demonUpdatedStats())       
-
-// function battle(){
-//     let demonPoints = demonStats.points + demonStats.points;
-//     let slayerPoints = slayerStats.points + slayerStats;
-//     let demonScore = demonStats.score - slayerStats.points;
-//     let slayerScore = slayerStats.score - demonStats.points;
-//     while (demonStats.score > 0 && slayerStats.score > 0){
-//         console.log("Demon Points !" + demonPoints +"Demon Score!" + demonScore)
-//         console.log("Slayer Points! " + slayerPoints + "Slayer Score! " + slayerScore)
-//     } return demonPoints, slayerPoints, demonScore, slayerScore
-// }
-// console.log(battle())
-
     
 console.log(randomSlayerStrikes(slayerStrikes))
 console.log(randomDemonStrikes(demonStrikes))

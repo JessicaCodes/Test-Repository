@@ -33,38 +33,79 @@
     planning and 10–25% actually typing code."
 */
 
-const demonStrikes = {
-    hammerKick: "Hammer Kick! "+ (Math.floor(Math.random() * 50) + 101),
-    superPunch: "Super Punch! "+ (Math.floor(Math.random() * 50) + 51),
-    lightSmack: "Light Smack! "+ (Math.floor(Math.random() * 50) + 1)
+
+// const demonStrikes = {
+//     hammerKick: "Hammer Kick! "+ (Math.floor(Math.random() * 50) + 101),
+//     superPunch: "Super Punch! "+ (Math.floor(Math.random() * 50) + 51),
+//     lightSmack: "Light Smack! "+ (Math.floor(Math.random() * 50) + 1)
+// }
+
+// const demonStats = {
+//     points:0,
+//     score: 200
+// }
+
+// const slayerStrikes = {
+//     hammerkick: 111,
+//     superPunch:  77,
+//     lightSmack:  44
+// }
+//const slayerStats = {
+    //     points: 0,
+    //     score: 200
+    // }
+// console.log(randomSlayerStrikes(slayerStrikes))
+// console.log(randomDemonStrikes(demonStrikes))
+
+
+const demon = {
+    stats: {
+        points: 0,
+        score: 200
+    },
+    strikes: {
+        hammerKick: () => (Math.floor(Math.random() * 50) + 101),
+        superPunch: () => (Math.floor(Math.random() * 50) + 51),
+        lightSmack: () => (Math.floor(Math.random() * 50) + 1)
+    }
 }
 
-const demonStats = {
-    points:0,
-    score: 200
-}
-
-const slayerStrikes = {
-    hammerkick: "Hammer Kick! " + 111,
-    superPunch: "Super Punch! " + 77,
-    lightSmack: "Light Smack! " + 44
-}
-
-const slayerStats = {
-    points: 0,
-    score: 200
+const slayer = {
+    stats: {
+        points: 0,
+        score: 200
+    },
+    strikes: {
+        hammerkick: () => 111,
+        superPunch: () => 77,
+        lightSmack: () => 44
+    }
 }
 
 
 function randomSlayerStrikes(object){
-    const strikeKeys = Object.keys(object);
-    return "Slayer " + object[strikeKeys[strikeKeys.length * Math.random()<< 0]]
-    }
+    const strikeKeys = Object.keys(object.strikes);
+    const attack = strikeKeys[strikeKeys.length * Math.random()<< 0]
+    const damage = object.strikes[attack]()
+    console.log("Slayer used " + attack + " for " + damage + " damage" )
+    // object[strikeKeys[strikeKeys.length * Math.random()<< 0]])
+    // subtract damage from demon.stats.score
+    // check if score is < 0 slayer wins else random demon strikes
+    
+}
 
 function randomDemonStrikes(object){
     const strikeKeys = Object.keys(object);
     return "Demon " + object[strikeKeys[strikeKeys.length * Math.random()<< 0]] // + slayerStats.score - strikeKeys;
     }
     
-console.log(randomSlayerStrikes(slayerStrikes))
-console.log(randomDemonStrikes(demonStrikes))
+
+function battle(){
+    if (Math.random()<.5){
+        randomSlayerStrikes(slayer)
+        //demon.strikes
+    } //else {slayer.strikes}
+}
+
+
+battle()

@@ -24,15 +24,15 @@
 
 // // Stringy Strings == Could not get it to work
 
-// // function stringy(size) {
-// //     for(let i = 0; i < size.length; i++)
-// //     for(let j = 0; j < size.length; j++)
-// //     if (!i % 0){
-// //         return 1
-// //     } return 0
-// //   }
+function stringy(size) {
+    for(let i = 0; i < size.length; i++)
+    for(let j = 0; j < size.length; j++)
+    if (!i % 2 == 0){
+        return 1
+    } return 0
+  }
   
-// //   console.log(stringy("what the F"))
+  console.log(stringy("what the F"))
 
 // //Responsible Drinking == Could not get it to work
 
@@ -52,41 +52,62 @@
 
 
 
-// console.log(hydrate("3 shots and 2 drinks"))
+// // console.log(hydrate("3 shots and 2 drinks"))
 
 
-function solve(arr){
- let reverseArray = arr.reverse()
- let direction = reverseArray[0].slice(0,5)
- let lastElement = reverseArray.pop()
- let begin = lastElement.slice(0,6)
+// function solve(arr){
 
- console.log(direction)
- console.log(lastElement, "<==")
- console.log(begin)
- return reverseArray
-}
+//  let reverseArray = arr.reverse()
+//  let direction = reverseArray[0].slice(0,5)
+//  let lastElement = reverseArray.pop()
+//  let begin = lastElement.slice(0,6)
+
+//  console.log(direction)
+//  console.log(lastElement, "<==")
+//  console.log(begin)
+//  return reverseArray
+// }
  
-// ).slice(0,6)
+// // ).slice(0,6)
+
+
+// function solve(arr){
+
+//   let reverseArray = arr.reverse()
+//   let direction = reverseArray[0].slice(0,5)
+//   let lastElement = reverseArray.pop()
+//   let begin = lastElement.slice(0,6)
+//   if (direction === 'Left'|| direction === 'Right'){
+//     reverseArray
+//   }
+
+ 
+//   console.log(direction)
+//   console.log(lastElement, "<==")
+//   console.log(begin)
+//   return reverseArray
+//  }
+
+// console.log(solve(['Begin on 3rd Blvd', 'Right on First Road', 'Left on 9th Dr']))
 
 
 
-console.log(solve(['Begin on 3rd Blvd', 'Right on First Road', 'Left on 9th Dr']))
 
-
-
-
-// const sliceMe = ["Hello", "There", "We", "Are", "Legion", "Nah"];
-// const sliced = sliceMe.slice(2, sliceMe.length-1);
-// // Checking whether or not we've modified our original array
-// console.log(sliceMe, "<-- are you ok?");
-// // Logging our new "sub-array" that we created from out original array
-// console.log(sliced, "<-- sliced!")
-
-//   /*
-//     .splice()
-//       - Warning!! Mutator method alert! (MDN) The splice() method changes the contents 
-//         of an array by removing or replacing existing elements and/or adding new elements.
-//   */
-// sliceMe.splice(0, sliceMe.length-1);
-// console.log(sliceMe, "<--- are you still ok")
+function evenOrOdd(str) {
+  let arr = str.split('')
+  let even = arr.filter(a => a%2 === 0)
+  let evenSum = even.map(a => Number(a => Number(a)).reduce((a,b) => a+b)
+  let oddSum = 0
+  for (i=0; i < str.length; i++){
+      if (Number(str[i] % 2 === 0){
+          evenSum = evenSum + Number(str[i]);
+          console.log(str[i])
+      } if (Number(str[i] % 2 !== 0){
+          oddSum = oddSum + Number(str[i])}
+      if (oddSum > evenSum){
+          return "Odd is greater"
+      } if (evenSum > oddSum){
+          return "Even is greater"
+          }   else 
+          { return "Odd and Even is same"}
+  

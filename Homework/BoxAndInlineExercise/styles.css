@@ -1,0 +1,31 @@
+* {
+    line-height: 25px
+}
+
+#cottage-example {
+    width: 700px;
+}
+
+.module {
+    /* padding-top: 5 px;
+    padding-left: 5 px;
+    padding-right: 5 px;
+    padding-bottom: 5 px; */
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: 25px;
+    margin-left: 25px;
+    border: 1px solid rgb(255, 0, 0);
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .border {
+      border: 1px solid rgb(17, 187, 199);
+      padding: 5px;
+      margin: 5px;
+  }
+
+  body {
+      
+  }

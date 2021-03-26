@@ -1,0 +1,87 @@
+* {
+    line-height: 25px
+}
+
+    body {
+    /* background-color:rgb(10, 10, 10); */
+    background-image: linear-gradient(#fcd0bb, #f50)
+    /* background-image: url("ThisPC/Pictures/me.png");
+    background-repeat: no-repeat; */}
+
+
+h1, h3 {
+    color:#ff0000f2;
+    text-align: center;
+    font-style:italic;
+    font-family:serif;
+    text-shadow:#fcd0bb;
+}
+
+.module {
+    /* padding-top: 5 px;
+    padding-left: 5 px;
+    padding-right: 5 px;
+    padding-bottom: 5 px; */
+    /* margin-top: 70px;
+    margin-bottom: 70px;
+    margin-right: 70px;
+    margin-left: 70px; */
+    border: 17px solid #faf0eb;
+    opacity: 0.7;
+    border-style:double;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+  }
+
+h2 {
+    color:#1b1a1940;
+    text-align: center;
+    font-style:italic;
+    font-family:serif; ;
+    text-align: left;
+    font-family:serif;
+    font-size: 30;
+}
+p  {
+    color:#faf0eb;
+    font-size: 16px ;
+    text-align: justify
+}
+
+/* ul {
+    color:#faf0eb;
+    font-size: 16px;
+    text-align: center;    
+} */
+
+#color {
+    color:#faf0eb;
+}
+
+#color1 {
+    color:#ff0000f2;
+}
+.column1of3, .column2of3, .column3of3 {
+    width: 300px;
+    float: left;
+    margin: 10px;
+}
+
+video {
+    width: 300px;
+}
+ #centerAlign {
+     text-align: center;
+ }
+
+#year {
+    font-family: cursive;
+}
+
+a {
+    color:#1b1a1940
+}
+© 2021 GitHub, Inc.

@@ -4,13 +4,23 @@
 
     body {
     /* background-color:rgb(10, 10, 10); */
+    /* background-color: rgb(207, 175, 181) */
     background-image: linear-gradient(#fcd0bb, #f50)
     /* background-image: url("ThisPC/Pictures/me.png");
     background-repeat: no-repeat; */}
 
 
 
-h1, h3 {
+h1 {
+    /* margin-left: 225px;
+    margin-right: 225px; */
+    border: 17px solid #faf0eb;
+    opacity: 0.7;
+    border-style:double;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 5px;
+    padding: 20px;
     color:#ff0000f2;
     text-align: center;
     font-style:italic;
@@ -18,11 +28,69 @@ h1, h3 {
     text-shadow:#fcd0bb;
 }
 
-.module {
-    /* padding-top: 5 px;
+
+h3 {
+    color:#ff0000f2;
+    text-align: center;
+    font-style:italic;
+    font-family:serif;
+    text-shadow:#fcd0bb;
+}
+
+
+
+#body-container {
+        margin: 0 auto;
+        width: 900;
+        width: 95%;
+}
+
+body {
+    margin: 0 auto
+}
+
+.border{
+    border: 17px solid #faf0eb;
+    opacity: 0.7;
+    border-style:double;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+  }
+  
+  li {
+    height: 30vh;
+    flex-grow: 1;
+  }
+
+  img {
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+
+/* .module {
+    padding-top: 5 px;
     padding-left: 5 px;
     padding-right: 5 px;
-    padding-bottom: 5 px; */
+    padding-bottom: 5 px;
     margin-top: 70px;
     margin-bottom: 70px;
     margin-right: 70px;
@@ -35,7 +103,7 @@ h1, h3 {
     -webkit-border-radius: 5px;
     padding: 20px;
     margin: 20px;
-  }
+  } */
 
 h2 {
     color:#1b1a1940;
@@ -49,8 +117,16 @@ h2 {
 p  {
     color:#faf0eb;
     font-size: 16px ;
-    text-align: justify
+    font-weight: 200;
+    text-align:left;
 }
+
+/* .column1, .column2, .column3 {
+    float:left;
+    background-color: #f50;
+    width: 300px;
+    margin-left: 50px;    
+} */
 
 /* ul {
     color:#faf0eb;
@@ -65,11 +141,11 @@ p  {
 #color1 {
     color:#ff0000f2
 }
-.column1of3, .column2of3, .column3of3 {
+/* .column1of3, .column2of3, .column3of3 {
     width: 300;
     float: left;
     margin: 10px
-}
+} */
  #centerAlign {
      text-align: center
  }

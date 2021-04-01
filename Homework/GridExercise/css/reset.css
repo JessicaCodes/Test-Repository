@@ -1,0 +1,173 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	padding-left: 200px;
+	padding-right: 200px;
+	padding-bottom: 200px;
+	padding-top:20px;
+	line-height: 1;
+	background-color: rgb(146, 178, 238);
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#grid-container{
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	height: 100%;
+    width: 100%;
+	grid-column-gap: 0px;
+}
+
+.computer{
+	background-color: rgb(223, 62, 116);
+	height: fit-content;
+}
+
+.doom {
+	background-color: rgb(116, 111, 113);
+	height: fit-content;
+}
+
+.nature {
+	background-color: rgb(32, 167, 50);
+	height: fit-content;
+
+}
+
+.orange-water-fall{
+	background-color: rgb(231, 120, 46);
+	height: fit-content;
+
+}
+
+img {
+	align-content: center;
+	width: 100%;
+	border-style:solid;
+	border-width: 1px;
+	border-color:rgb(2, 6, 63);
+}
+
+.computer.img-container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    /* margin-top: 50px; */
+    /* margin-bottom: 50px; */
+    border-style: solid;
+    border-color: rgb(245 217 145);
+    border-width: 10px;
+    padding-top: 55%;
+    padding-bottom: 55%;
+
+}
+
+
+
+.doom.img-container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    /* margin-top: 50px; */
+    /* margin-bottom: 50px; */
+    border-style: solid;
+    border-color: rgb(245 217 145);
+    border-width: 10px;
+    padding-top: 30%;
+    padding-bottom: 30%;
+}
+
+
+.orange-water-fall.img-container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    /* margin-top: 50px; */
+    /* margin-bottom: 50px; */
+    border-style: solid;
+    border-color: rgb(245, 217, 145);
+    border-width: 10px;
+    padding-top: 50%;
+    padding-bottom: 50%;
+
+}
+
+.nature.img-container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    /* margin-top: 50px; */
+    /* margin-bottom: 50px; */
+    border-style: solid;
+    border-color: rgb(245, 217, 145);
+    border-width: 10px;
+    padding-top: 55%;
+    padding-bottom: 55%;
+}
+
+h1 {
+	display:flex;
+	justify-content:space-around;
+	padding-bottom: 20px;
+	padding-top:5px;
+	font-size: 24px;
+}
+
+div {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+	
+p {
+	display:flex;
+	justify-content: center;
+	background-color:white;
+	text-align: center;
+	padding-top: 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-bottom: darkslategrey;
+}

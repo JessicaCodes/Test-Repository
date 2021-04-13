@@ -55,29 +55,31 @@ function sum(arr) {
       nums2.push(arr.slice([i + 1]));
       nums1 = nums1.join("").replace(/,/gi, '');
       nums2 = nums1.join("").replace(/,/gi, '');
-      return total = parseInt(nums1) + parseInt(nums2);
+      total = parseInt(nums1) + parseInt(nums2);
       //console.log(nums1, "<<-- nums1", nums2, total)
     } else if (arr[i] == "-") {
       nums1.push(arr.slice(0, [i]));/*= arr.join(arr.slice(0,arr[i]));*/
       nums2.push(arr.slice([i + 1]));
       nums1 = nums1.join("").replace(/,/gi, '');
       nums2 = nums2.join("").replace(/,/gi, '');
-      return total = parseInt(nums1) - parseInt(nums2);
+      total = parseInt(nums1) - parseInt(nums2);
     } else if (arr[i] == "x") {
       nums1.push(arr.slice(0, [i]));/*= arr.join(arr.slice(0,arr[i]));*/
       nums2.push(arr.slice([i + 1]));
       nums1 = nums1.nums1.join("").replace(/,/gi, '');
       nums2 = nums2.nums1.join("").replace(/,/gi, '');
-      return total = parseInt(nums1) * parseInt(nums2);
+     total = parseInt(nums1) * parseInt(nums2);
     } else if (arr[i] == "/") {
       nums1.push(arr.slice(0, [i]));/*= arr.join(arr.slice(0,arr[i]));*/
       nums2.push(arr.slice([i + 1]));
       nums1 = nums1.nums1.join("").replace(/,/gi, '');
       nums2 = nums2.nums1.join("").replace(/,/gi, '');
-      return total = parseInt(nums1) / parseInt(nums2);
+      total = parseInt(nums1) / parseInt(nums2);
     }
-  }
+  } return total
 }
+
+
       console.log(sum(["1", "2", "3", "-", "4","5","6", "="]))
 
 

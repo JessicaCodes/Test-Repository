@@ -1,0 +1,24 @@
+body {
+    width: 97.7vw;
+    height: 100vh;
+}
+
+h1 {
+    margin-left: 5px;
+    margin-top: -125px;
+    height: fit-content;
+    width: fit-content;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: rgba(5, 185, 185, 0.61)
+}
+/* rgba(5, 185, 185, 0.61 */
+div {
+    display:flex;
+    justify-content: space-between;
+}
+/* 
+div:nth-child(2) {
+    display:flex;
+    justify-content: flex-end;
+} */

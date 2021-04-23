@@ -106,12 +106,14 @@ function draw() {
   raf = window.requestAnimationFrame(draw);
 }
 
-canvas.addEventListener("keydown", keyDownHandler, false);
-canvas.addEventListener("keyup", keyUpHandler, false); {
-  raf = window.requestAnimationFrame(draw);
-};
+// canvas.addEventListener("keydown", keyDownHandler, false);
+// canvas.addEventListener("keyup", keyUpHandler, false);
 
-canvas.addEventListener('mouseout', function(e) {
+document.addEventListener('mouseover', function(e) {
+  raf = window.requestAnimationFrame(draw);
+});
+
+document.addEventListener('mouseout', function(e) {
   window.cancelAnimationFrame(raf);
 });
 

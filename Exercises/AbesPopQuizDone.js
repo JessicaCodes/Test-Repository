@@ -9,7 +9,8 @@
 
 let value = ""
 const value = ""
-var value = ""
+const value = ""
+
 
 //2.)JavaScript has many data types. String is an example of one. Name 2 more
 

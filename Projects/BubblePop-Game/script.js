@@ -2,23 +2,14 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext('2d');
 const background = new Image();
 background.src = "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg";
-
-// function drawBubble(){
-//     for (let i = 0; i < 6; i++){
-//     ctx.beginPath();
-//     ctx.arc(26, 26, 25, 0, 2 * Math.PI);
-//     ctx.strokeStyle = "pink";
-//     ctx.stroke();
-//     ctx.fillStyle = "pink";
-//     ctx.fill();
-// }
-// }
+const restart = document.querySelector("#startGame")
+const gamewrap = document.querySelector("#gameWrapper")
+const rightPressed = false;
+const leftPressed = false;
+restart.addEventListener("click", draw)
 
 const colors = ["rgb(255,153,153,0.900)", "rgb(153,255,204,0.900)", "rgb(153,204,255,0.900)", "rgb(255,255,153,0.900)"]
 
-// background.onload = function(){
-//     ctx.drawImage(background,0,0);   
-// }
 
 const gameState = {
   gameBubbles: [],
@@ -60,6 +51,13 @@ function generateStartingBubbles() {
   }
 }
 
+function newBubbleRow(){
+  for (let i = 0; i < 1; i++) {
+    for (let j = 0; j < 12; j++){
+      gameState.gameBubbles.push(new Bubble(20 + j * 42, 20 + i * 42, 20))
+    }
+  }
+}
 
 // moving ball
 var raf;
@@ -95,27 +93,47 @@ function draw() {
   }
   gameState.drawBubbles();
   ball.draw();
-  ball.x += ball.vx;
-  ball.y += ball.vy;
-  if (ball.y + ball.vy > canvas.height || ball.y + ball.vy < 0) {
-    ball.vy = -ball.vy;
-  }
-  if (ball.x + ball.vx > canvas.width || ball.x + ball.vx < 0) {
-    ball.vx = -ball.vx;
-  }
-  raf = window.requestAnimationFrame(draw);
+  // ball.x += ball.vx;
+  // ball.y += ball.vy;
+  // if (ball.y + ball.vy > canvas.height || ball.y + ball.vy < 0) {
+  //   ball.vy = -ball.vy;
+  // }
+  // if (ball.x + ball.vx > canvas.width || ball.x + ball.vx < 0) {
+  //   ball.vx = -ball.vx;
+  // }
+  // raf = window.requestAnimationFrame(draw);
 }
 
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
+
+function keyDownHandler(e) {
+  if (e.key == "Right" || e.key == "ArrowRight") {
+      rightPressed = true;
+  }
+  else if (e.key == "Left" || e.key == "ArrowLeft") {
+      leftPressed = true;
+  }
+}
+
+function keyUpHandler(e) {
+  if (e.key == "Right" || e.key == "ArrowRight") {
+      rightPressed = false;
+  }
+  else if (e.key == "Left" || e.key == "ArrowLeft") {
+      leftPressed = false;
+  }
+}
 // canvas.addEventListener("keydown", keyDownHandler, false);
 // canvas.addEventListener("keyup", keyUpHandler, false);
 
-document.addEventListener('mouseover', function(e) {
-  raf = window.requestAnimationFrame(draw);
-});
+// document.addEventListener('mouseover', function(e) {
+//   raf = window.requestAnimationFrame(draw);
+// });
 
-document.addEventListener('mouseout', function(e) {
-  window.cancelAnimationFrame(raf);
-});
+// document.addEventListener('mouseout', function(e) {
+//   window.cancelAnimationFrame(raf);
+// });
 
 // ball.draw();
 

@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
 }
 
 h1 {
@@ -24,13 +24,6 @@ h1 {
     cursor: pointer;
 }
 
-.rip {
-    color: rgb(114,3,3);
-    display: fles;
-    margin: auto;
-
-}
-
 
 .flex-container {
     background-image:linear-gradient(#0c61e4,#f1f3f6);
@@ -50,9 +43,11 @@ h1 {
     border-top-right-radius: 20%;
     border-top-left-radius: 20%;
     display:flex;
-    margin:auto;
+    margin: auto;
     flex-direction: column;
+    justify-content: center;
 }
+
 
 .grid-container {
     /* border-style: groove;
@@ -61,18 +56,12 @@ h1 {
     display:grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 25% 25% 25% 25%;
-    padding: 5px;
-    margin:5px;
+    padding: 10px;
+    margin-left:20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 
 }
-
-/* .clear-btn {
-    grid-column: 3/span 2;
-    font-size: 25px;
-    border-style: groove;
-    border-color: rgb(255, 255, 255);
-    border-width: 5px;
-} */
 
 .equals {
     grid-column: 5/span 6;
@@ -81,56 +70,19 @@ h1 {
     border-style: groove;
     border-color: rgb(255, 255, 255);
     border-width: 5px;
-    padding-top: 150%;
+    padding-top: 50%;
 }
 
-/* #plus{
-    grid-column-start: 1;
-    font-size: 25px;
-    border-style: groove;
-    border-color: lightgray;
-    border-width: 5px;
-}
 
-#minus{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    font-size: 25px;
-    border-style: groove;
-    border-color: lightgray;
-    border-width: 5px;
-}
-
-#multiply{
-    grid-row: 3;
-    font-size: 25px;
-    border-style: groove;
-    border-color: lightgray;
-    border-width: 5px;
-}
-
-#divide{
-    grid-column: 4;
-    font-size: 25px;
-    border-style: groove;
-    border-color: lightgray;
-    border-width: 5px;
-} */
-
-/* #numbers {
-grid-template-columns: ;
-} */
-
-
-.display-window {
+ p {
     background-color: rgb(255, 255, 255);
     padding: 20px;
-    margin: 60px;
+    margin: 50px;
     border-radius: 25px;
     font-size: 100%;
 }
 
-li {
+button {
     list-style-type:none;
     text-align:center;
     font-size: 25px;
@@ -139,14 +91,19 @@ li {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-    position:relative  ;
+    box-decoration-break: clone ;
     padding:20px;
     border-style: groove;
     border-color: rgb(255, 255, 255);
     border-width: 5px;
     font-weight: bold;
+    cursor: pointer;
 }
+
+button:hover{
+    opacity:5;
+    border-color: #1a6de9
+  }
 
 #logo {
     color: #0c61e4;
@@ -157,19 +114,14 @@ li {
     text-align: right;
     color: #0c61e4;
     margin-top: -20px;
-
+    cursor: pointer;
 }
 
 img {
     width: 1.5%;
 }
 
-/* .calcHidden {
-    display: none;
-} */
+#boom {
+    cursor: pointer;
+}
 
-/* .calcShown {
-    display: block;
-} */
-/* 
-class="calcHidden calcShown"  */

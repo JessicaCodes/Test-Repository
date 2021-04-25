@@ -8,9 +8,9 @@ const show = document.querySelector('.flex-container')
 const operators = Array.from(document.body.querySelectorAll('.operator'))
 const output = document.querySelector('.output')
 
-const rip = document.querySelector('.rip')
+// const rip = document.querySelector('.rip')
 
-const dmx = document.querySelector('.x')
+// const dmx = document.querySelector('.x')
 
 const whiteBackground = document.querySelector('body')
 
@@ -20,17 +20,17 @@ document.addEventListener("click", (e) => {
     }
 })
 
-document.addEventListener("click", (e) => {
-    if (e.target === dynamicH1) {
-        rip.style.display = 'none';
-    }
-})
+// document.addEventListener("click", (e) => {
+//     if (e.target === dynamicH1) {
+//         rip.style.display = 'none';
+//     }
+// })
 
-document.addEventListener("click", (e) => {
-    if (e.target === dynamicH1) {
-        whiteBackground.style.backgroundColor = "white";
-    }
-})
+// document.addEventListener("click", (e) => {
+//     if (e.target === dynamicH1) {
+//         whiteBackground.style.backgroundColor = "white";
+//     }
+// })
 
 for (let button of [...numbers,...operators]){
     button.addEventListener("click", (e) => {
@@ -126,14 +126,3 @@ document.body.addEventListener("click", (e) => {
     }
 });
 
-// function unhide(dynamicH1, divID) {
-// var item = document.getElementById(divID);
-// if (item) {
-//     if(item.className=='hidden'){
-//         item.className = 'unhidden' ;
-//         clickedButton.value = 'hide'
-//     }else{
-//         item.className = 'hidden';
-//         clickedButton.value = 'unhide'
-//     }
-// }}

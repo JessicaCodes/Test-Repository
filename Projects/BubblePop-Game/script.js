@@ -1,12 +1,16 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext('2d');
 const background = new Image();
-background.src = "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg";
+//background.src = "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg";
 const restart = document.querySelector("#startGame")
 const gamewrap = document.querySelector("#gameWrapper")
+const bubbleColumnCount = 6
+const bubbleRowCount = 12
+const score = 0
+keys = []
 const rightPressed = false;
 const leftPressed = false;
-restart.addEventListener("click", draw)
+restart.addEventListener("click", runGame);
 
 const colors = ["rgb(255,153,153,0.900)", "rgb(153,255,204,0.900)", "rgb(153,204,255,0.900)", "rgb(255,255,153,0.900)"]
 
@@ -31,6 +35,7 @@ class Bubble {
       this.y = y;
       this.radius = radius;
       this.color = color;
+      this.status = 1;
   }
 
   draw(){
@@ -41,49 +46,84 @@ class Bubble {
       ctx.stroke();
       ctx.fill();
   }
+
+  collide(target){
+    if (this.color == target.color){
+      this.fall();
+      target.fall();
+    }
+    else {
+      
+    }
+  }
 }
 
+class UserBubble extends Bubble {
+  constructor(x,y,radius,color,vx,vy){
+    super(x,y,radius,color);
+    this.vx = vx;
+    this.vy = vy;
+  }
+}
+
+
 function generateStartingBubbles() {
-  for (let i = 0; i < 6; i++) {
-    for (let j = 0; j < 12; j++) {
-      gameState.gameBubbles.push(new Bubble(20 + j * 42, 20 + i * 42, 20));
+  for (let c = 0; c < bubbleColumnCount; c++) {
+    for (let r = 0; r < bubbleRowCount; r++) {
+      gameState.gameBubbles.push(new Bubble(20 + r * 42, 20 + c * 42, 20));
     }
   }
 }
 
 function newBubbleRow(){
-  for (let i = 0; i < 1; i++) {
-    for (let j = 0; j < 12; j++){
-      gameState.gameBubbles.push(new Bubble(20 + j * 42, 20 + i * 42, 20))
+  for (let c = 0; c < 1; c++) {
+    for (let r = 0; r < bubbleRowCount; r++){
+      gameState.gameBubbles.push(new Bubble(20 + r * 42, 20 + c * 42, 20))
     }
   }
 }
 
-// moving ball
-var raf;
+// moving userBubble
 
-var ball = {
-  x: 250,
-  y: 425,
-  vx: 5,
-  vy: -2,
-  radius: 20,
-  color: colors[Math.floor(Math.random() * colors.length)],
-  draw: function() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
-    ctx.closePath();
-    ctx.fillStyle = this.color;
-    ctx.fill();
-  }
-};
+// class shooterBubble {
+//   constructor(x, y, radius, color) {
+//     this.x = x;
+//     this.y = y;
+//     this.radius = radius;
+//     this.color = colors[Math.floor(Math.random() * colors.length)];
 
-function chooseTrajectory(){
-  ball.x = 250;
-  ball.y = 425
-}
+//     this.update = function () {
+
+//       this.draw();
+//     };
+
+//     this.draw = function () {
+//       b.beginPath();
+//       b.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+//       b.fillStyle = this.color;
+//       b.fill();
+//       c.closePath();
+//     };
+//   }
+// }
+
+// let startBubble;
+// function init() {
+//   startBubble = new shooterBubble(250, 425, 20);
+// }
+ let raf;
+//Need to transform to class
+//UserBubble extends bubble Class
+//When a user bubble collides we need to make a new user bubble
 
 
+
+// function chooseTrajectory(){
+//   userBubble.x = 250;
+//   userBubble.y = 425
+// }
+
+const userBubble = new UserBubble(250, 425, 20)
 
 function draw() {
   ctx.clearRect(0,0, canvas.width, canvas.height);
@@ -92,38 +132,90 @@ function draw() {
     gameState.areBubblesDrawn = true
   }
   gameState.drawBubbles();
-  ball.draw();
-  // ball.x += ball.vx;
-  // ball.y += ball.vy;
-  // if (ball.y + ball.vy > canvas.height || ball.y + ball.vy < 0) {
-  //   ball.vy = -ball.vy;
-  // }
-  // if (ball.x + ball.vx > canvas.width || ball.x + ball.vx < 0) {
-  //   ball.vx = -ball.vx;
-  // }
-  // raf = window.requestAnimationFrame(draw);
+  userBubble.draw();
+  userBubble.x += userBubble.vx;
+  userBubble.y += userBubble.vy;
+  if (userBubble.y + userBubble.vy > canvas.height || userBubble.y + userBubble.vy < 0) {
+    userBubble.vy = -userBubble.vy;
+  }
+  if (userBubble.x + userBubble.vx > canvas.width || userBubble.x + userBubble.vx < 0) {
+    userBubble.vx = -userBubble.vx;
+  }
+ // raf = window.requestAnimationFrame(draw);
 }
 
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
 
-function keyDownHandler(e) {
-  if (e.key == "Right" || e.key == "ArrowRight") {
-      rightPressed = true;
-  }
-  else if (e.key == "Left" || e.key == "ArrowLeft") {
-      leftPressed = true;
-  }
-}
+//want to be able to change trajectory of userBubble based on right and left button clicks
+//also want the up arrow to release userBubble
 
-function keyUpHandler(e) {
-  if (e.key == "Right" || e.key == "ArrowRight") {
-      rightPressed = false;
-  }
-  else if (e.key == "Left" || e.key == "ArrowLeft") {
-      leftPressed = false;
-  }
-}
+
+
+
+//Collision Detection
+
+// function collisionDetection() {
+//   for (var c = 0; c < bubbleColumnCount; c++) {
+//       for (var r = 0; r < bubbleRowCount; r++) {
+//           var b = bubbles[c][r];
+//           if (b.status == 1) {
+//               if (x > b.x && x < b.x + radius && y > b.y && y < b.y + radius) {
+//                   dy = -dy;
+//                   b.status = 0;
+//                   score++;
+//                   if(score == bubbleRowCount*bubbleColumnCount) {
+//                       alert("YOU WIN, CONGRATULATIONS!");
+//                       document.location.reload();
+//                       clearInterval(interval); // Needed for Chrome to end game
+//                   }
+//               }
+//           }
+//       }
+//   }
+// }
+
+// function collisionDetection(){
+//   //iterate over each game bubble and check if it has collided with user bubble
+//   for (i = 0; i < gameState.gameBubbles.length; i++){
+//     let bubbleTarget = {radius: gameState.gameBubbles.radius, x: gameState.gameBubbles.x, y: gameState.gameBubbles.y}
+//     let bubbleShooter = {radius: userBubble.radius, x:userBubble.x, y: userBubble.y}
+//     let bx = bubbleTarget.x - bubbleShooter.x;
+//     let by = bubbleTarget.y - bubbleShooter.y;
+//     let distance = Math.sqrt(bx * bx + by * by);
+//     if (distance < bubbleTarget.radius + bubbleShooter.radius){
+//call on current bubble.collide with userBubble [i] 
+//     }
+
+
+// && userBubble.color == gameState.gameBubbles.color
+  //this is how we check collision  
+  //if (x > b.x && x < b.x + radius && y > b.y && y < b.y + radius)
+  //if user.x > bubble.x
+// }
+// window.addEventListener("keydown", function(e){
+//   keys[e.key]=true;
+// userBubble.moving = true;
+// });
+
+
+// document.addEventListener("keyup", keyUpHandler, false);
+
+// function keyDownHandler(e) {
+//   if (e.key == "Right" || e.key == "ArrowRight") {
+//       rightPressed = true;
+//   }
+//   else if (e.key == "Left" || e.key == "ArrowLeft") {
+//       leftPressed = true;
+//   }
+// }
+
+// function keyUpHandler(e) {
+//   if (e.key == "Right" || e.key == "ArrowRight") {
+//       rightPressed = false;
+//   }
+//   else if (e.key == "Left" || e.key == "ArrowLeft") {
+//       leftPressed = false;
+//   }
+// }
 // canvas.addEventListener("keydown", keyDownHandler, false);
 // canvas.addEventListener("keyup", keyUpHandler, false);
 
@@ -135,7 +227,14 @@ function keyUpHandler(e) {
 //   window.cancelAnimationFrame(raf);
 // });
 
-// ball.draw();
+function runGame() {
+  console.log('anything');
+  setInterval(draw,30);
+}
+
+
+
+// userBubble.draw();
 
 
 

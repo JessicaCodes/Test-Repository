@@ -14,3 +14,22 @@ function drawBubbles() {
       }
     }
   }
+
+
+  var raf;
+
+var userBubble = {
+  x: 250,
+  y: 425,
+  vx: 5,
+  vy: -2,
+  radius: 20,
+  color: colors[Math.floor(Math.random() * colors.length)],
+  draw: function() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+    ctx.closePath();
+    ctx.fillStyle = this.color;
+    ctx.fill();
+  }
+};

@@ -1,0 +1,11 @@
+body {
+    background-color:rgb(13, 10, 47);
+}
+
+div {
+    display:flex;
+    justify-content: center;
+}
+#canvas {
+    background-image: url ("images/target.jpeg")
+}

@@ -25,6 +25,7 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    color:rgba(255, 105, 180, 0.829)
 }
 
 div:nth-child(2) {

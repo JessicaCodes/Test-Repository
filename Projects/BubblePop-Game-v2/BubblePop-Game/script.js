@@ -13,7 +13,6 @@ const gameState = {
   userBubble: null,
   gameBubbles: [],
   colors: ["rgb(255,153,153,0.900)", "rgb(153,255,204,0.900)", "rgb(153,204,255,0.900)", "rgb(255,255,153,0.900)"],
-  //colors: ["rgb(255,153,153,0.900)"],
   areBubblesDrawn: false,
   generateColor() {
     return this.colors[Math.floor(Math.random() * this.colors.length)];
@@ -25,6 +24,8 @@ const gameState = {
   },
   fallingBubbles: []
 }
+
+///////////////////////////////////------------------------- BUBBLE CLASS ------------------//////////////////////////////
 
 class Bubble {
   constructor(x, y, radius, color = gameState.generateColor()) {
@@ -72,18 +73,8 @@ class Bubble {
   }
 
   countDownToRemove(){
-    // if(this.color != 'red') return;
-    // console.log('removing',this)
-  setTimeout(this.removeFromGameState , 2000) 
+  setTimeout(this.removeFromGameState , 1000) 
   }
-  //   console.log(this.timer)
-  //   if(this.isFalling){
-  //     this.timer--;
-  //   }
-  //   if(this.timer <= 0){
-  //     this.removeFromGameState();
-  //   }
-  // }
 
 
   removeFromGameState = ()=> {
@@ -91,7 +82,6 @@ class Bubble {
     if(gameState.userBubble == this){
       gameState.userBubble = new UserBubble(250, 425, 20, 1, -3)
     } 
-
   }
   
   actionOnCollision(target) {
@@ -117,7 +107,7 @@ class Bubble {
     for (let i = gameState.gameBubbles.length-1; i >= 0; i--) {
       let curBub = gameState.gameBubbles[i];
       if(this === curBub) continue;
-      if(this.checkHasCollided(this, curBub, 3) && curBub.cachedColor === this.cachedColor && curBub.color !== "red"){
+      if(this.checkHasCollided(this, curBub, 5) && curBub.cachedColor === this.cachedColor && curBub.color !== "red"){
         curBub.color = "red";
         curBub.checkForSameColorsNearby();
         break;
@@ -147,18 +137,17 @@ class Bubble {
   }
 }
 
+////////////////////////////////////------------------------- USER BUBBLE CLASS ------------------//////////////////////////////
+
 class UserBubble extends Bubble {
   constructor(x, y, radius, dx, dy) {
     super(x, y, radius);
     this.moving = false
     this.dx = dx;
     this.dy = dy;
-    this.speed = 4;
-    //this.stuck = false;
-    //this.color = gameState.generateColor()
+    this.speed = 5;
   }
 
-  //This is where my user bubble is moving
   shootBubble() {
     if(this.moving){
       this.x += this.dx;
@@ -166,7 +155,6 @@ class UserBubble extends Bubble {
     }
     
   }
-
   
   checkBoundaries() {
     if (this.y + this.dy > canvas.height || this.y + this.dy < 0) {
@@ -178,6 +166,8 @@ class UserBubble extends Bubble {
   }
 }
 
+
+///////////////////////////////////------------------------- AIMER CLASS ------------------//////////////////////////////
 class Aimer {
   constructor(){
     this.color = 'rgb(168, 82, 253)';
@@ -186,7 +176,7 @@ class Aimer {
     this.width = 3;
     this.height = 40;
     this.rotation = Math.PI/2;
-    this.rotationSpeed = .1;
+    this.rotationSpeed = .01;
   }
 
   draw(){
@@ -211,6 +201,7 @@ class Aimer {
   }
 }
 
+//////////////////////////------------------------- LOOP FOR STARTING BUBBLES ------------------------////////////////////////////
   function generateStartingBubbles() {
     for (let c = 0; c < bubbleColumnCount; c++) {
       for (let r = 0; r < bubbleRowCount; r++) {
@@ -227,14 +218,12 @@ class Aimer {
   //   }
   // }
 
-  //let userBubble = new UserBubble(250, 425, 20, 1, -3)
   gameState.userBubble = new UserBubble(250, 425, 20, 1, -3)
   const aimer = new Aimer()
 
+  ////////////////////////////------------------ DRAW FUNCTION ---------------------///////////////////////////
 
   function draw() {
-    // console.log("going....")
-
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     if (gameState.areBubblesDrawn === false) {
       generateStartingBubbles();
@@ -250,34 +239,7 @@ class Aimer {
     aimer.draw();
   }
 
-
-
-  //want to be able to change trajectory of userBubble based on right and left button clicks
-  //also want the up arrow to release userBubble
-
-  function chooseTrajectory() {
-    canvas.addEventListener("keydown", keyDownHandler, false);
-    canvas.addEventListener("keyup", keyUpHandler, false);
-  }
-  
-  //Collision Detection
-
-
-
-  // function collisionDetection(){
-  //   //iterate over each game bubble and check if it has collided with user bubble
-  //   for (i = 0; i < gameState.gameBubbles.length; i++){
-
-  // && userBubble.color == gameState.gameBubbles.color
-  //this is how we check collision  
-  //if (x > b.x && x < b.x + radius && y > b.y && y < b.y + radius){
-  //if userbubble.x > bubble.x
-  // }
-  // window.addEventListener("keydown", function(e){
-  //   keys[e.key]=true;
-  // userBubble.moving = true;
-  // });
-
+//////////////////---------------EVENT LISTENERS------------------//////////////////
 let leftPressed = false;
 let rightPressed = false;
 

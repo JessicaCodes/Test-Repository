@@ -55,26 +55,27 @@ class Bubble {
 
   collide(target) {
     if (this.color == target.color) {
-      this.fall();
-      target.fall();
+      popBubbles();
     } else { 
       this.dx = 0; 
       this.dy = 0;
     }
   }
-  fall(){
-    if (this.y + this.radius + this.dy > canvas.height) {
-      this.dy =- this.dy * friction;
-  } else {
-      this.dy += gravity;
-   if (this.x + this.radius + this.dx > canvas.width || this.x - this.radius <= 0){
-      this.dx = -this.dx;
-  }
-  this.x += this.dx;
-  this.y += this.dy;
-  }
+
+
+  // fall(){
+  //   if (this.y + this.radius + this.dy > canvas.height) {
+  //     this.dy =- this.dy * friction;
+  // } else {
+  //     this.dy += gravity;
+  //  if (this.x + this.radius + this.dx > canvas.width || this.x - this.radius <= 0){
+  //     this.dx = -this.dx;
+  // }
+  // this.x += this.dx;
+  // this.y += this.dy;
+  // }
 }
-}
+
 
 
 class UserBubble extends Bubble {

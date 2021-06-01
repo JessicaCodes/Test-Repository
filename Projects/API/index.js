@@ -1,5 +1,5 @@
 const express = require('express');
-const app = epress();
+const app = express();
 const db = require("./queries.js");
 const port = 3030;
 const cors = require('cors');
@@ -7,17 +7,21 @@ const cors = require('cors');
 app.use(cors());
 
 app.get('/', (request, response) => {
-    response.json({ info: "Hi there!"})
+    response.json({ info: "Welcome to Jessica's Hip Hop database!!"})
 });
 
-app.get('/movie', (request, response) => {
-    response.json({ info: "Batman"})
-});
+app.get('/albums', db.getAlbum);
+app.post('/addalbums', db.addAlbum);
 
-app.get('/movies', (request, response) => {
-    response.json({ info: "Batman, Superman"})
-});
+app.get('/artist', db.getArtist);
+app.post('/artist', db.addArtist);
 
-app.listen(3030, () => {
+app.get('/genre', db.getGenre);
+app.post('/genre', db.addGenre);
+
+
+
+
+app.listen(port, () => {
     console.log("Server Running")
 });

@@ -1,4 +1,4 @@
-import {getKidsList} from '../tmdbRequests';
+import Navbar from './Navbar';
 
 export const MenuItems = 
         [
@@ -8,23 +8,18 @@ export const MenuItems =
         link: 'link-style'
     },
     {
-        title: 'TV Shows',
+        title: 'Genres',
         url: '',
         link: 'link-style'
     },
     {
-        title: 'Movies',
+        title: 'Artists',
         url: '',
         link: 'link-style'
     },
     {
-        title: 'New & Popular',
+        title: 'Albums',
         url: '',
-        link: 'link-style'
-    },
-    {
-        title: 'Kids',
-        url: {getKidsList},
         link: 'link-style'
     },
     {
@@ -43,4 +38,4 @@ export const MenuItems =
     
 ]
 
-    
+    export default Navbar;

@@ -1,0 +1,68 @@
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.background-photo {
+  border-radius: 0;
+  display: flex;
+  height: 100%;
+  width:100%;
+  position: absolute;
+  opacity: .1;
+  background-attachment: scroll;
+  z-index: 1;
+}
+
+h1 {
+  position: relative;
+  margin-top: 50px;
+  margin-left: 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 36px;
+  color: #d61e1e9d;
+  /* color:#FFFEFE; */
+  z-index: 3;
+}
+
+h4 {
+  position: relative;
+  margin-left: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  color: #d61e1e9d;
+  /* color: #a614149d; */
+  z-index: 3;
+}
+
+/* .triangle-right {
+    position: absolute;
+    top: -365px;
+    left: -250px ;
+    width: 114vw;
+    height: 100vh;
+    transform: rotate(-26deg);
+    background: rgba(230, 64, 64, 0.6);
+    overflow: hidden;
+    background-attachment: fixed;
+    z-index: 2;
+  } */
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

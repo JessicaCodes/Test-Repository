@@ -49,6 +49,10 @@ class App extends React.Component {
       .then(res => {
         this.setState({ comingSoonList: res.results })
       })
+      getVideosById()
+      .then(res => {
+        this.setState({ VideosById: res.results})
+      })
       getTVShowList()
       .then(res => {
         this.setState({ tvShowList: res.results })

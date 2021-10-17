@@ -13,6 +13,11 @@ export const getMovieById = async (id) => {
   return response.json();
 }
 
+export const getMovieByRating = async (id) => {
+  const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`)
+  return response.json();
+}
+
 export const getVideosById = async (id) => {
   const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`)
   return response.json();

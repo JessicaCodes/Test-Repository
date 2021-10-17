@@ -27,14 +27,7 @@ export const MenuItems =
         url: 'https://github.com/JessicaCodes',
         link: 'link-style'
     },
-   
-
     
-        // <label htmlFor="search">Search Getflix</label>
-        // <input type="text" value={props.inputValue} onChange={}/>
-        // // url: '#',
-        // // link: 'link-style'
-    ,
     
 ]
 
